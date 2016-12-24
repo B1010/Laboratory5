@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Exercise5
+namespace Exercise6
 {
     class Program
     {
@@ -19,16 +19,16 @@ namespace Exercise5
                 temp++;
             }
 
-            double min = sum = iarray[0] + iarray[iarray.Length - 1];
-            for (int i = 0; i < iarray.Length; i++)
+            sum = iarray[0] + iarray[1] + iarray[2];
+            for (int i = 1; i < temp - 2; i++)
             {
-                sum = iarray[i] + iarray[iarray.Length - 1 - i];
-                if (sum < min)
-                    min = sum;
+                if (sum < (iarray[i] + iarray[i + 1] + iarray[i + 2]))
+                {
+                    sum = iarray[i] + iarray[i + 1] + iarray[i + 2];
+                }
             }
-            Console.WriteLine("\nМинимум = {0}", min);
+            Console.WriteLine("\nМаксимальная сумма = " + sum);
             Console.ReadLine();
-
         }
     }
 }

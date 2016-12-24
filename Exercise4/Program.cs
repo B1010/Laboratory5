@@ -65,7 +65,6 @@ namespace Exercise4
                 Console.Write("{0} ", tarray[i]);
             }
             Console.ReadLine();
-
         }
     }
 }
