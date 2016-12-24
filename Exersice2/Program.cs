@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Exersice2
 {
@@ -10,44 +6,54 @@ namespace Exersice2
     {
         static void Main()
         {
-            int[,] iARRAY = new int[10, 10];
-            int imax, jmax, imin, jmin;
-            Random random = new Random();
+            double[] iarray = new double[10];
+            int temp = 0;
+            double sum = 0;
 
+            Console.WriteLine("Введите элементы массива: ");
+            while (temp < 10)
+            {
+                iarray[temp] = double.Parse(Console.ReadLine());
+                temp++;
+            }
+
+            double min = iarray[0];
+            foreach (int i in iarray)
+            {
+                if (i < min)
+                {
+                    min = i;
+                }
+            }
+            double max = iarray[0];
+            foreach (int i in iarray)
+            {
+                if (i > max)
+                {
+                    max = i;
+                }
+            }
+            int MinIndex = 0, MaxIndex = 0;
             for (int i = 0; i < 10; i++)
             {
-                for (int j = 0; j < 10; j++)
-                {
-                    iARRAY[i, j] = random.Next(1000);
-                }
+                if (iarray[i] == min)
+                    MinIndex = i;
+                if (iarray[i] == max)
+                    MaxIndex = i;
             }
 
-            double max = iARRAY[0, 0];
-            for (int i = 0; i < iARRAY.GetLength(0); i++)
+            if (MaxIndex > MinIndex)
             {
-                for (int j = 0; j < iARRAY.GetLength(1); j++)
+                for (int i = MinIndex + 1; i <= MaxIndex - 1; i++)
                 {
-                    if (max < iARRAY[i, j])
-                    {
-                        max = iARRAY[i, j];
-                        imax = i, jmax = j;
-                    }
+                    sum = sum + iarray[i];
                 }
+                Console.WriteLine("Сумма между min и max = {0}", sum);
             }
-
-            double min = iARRAY[0, 0];
-            for (int i = 0; i < iARRAY.GetLength(0); i++)
+            else
             {
-                for (int j = 0; j < iARRAY.GetLength(1); j++)
-                {
-                    if (min > iARRAY[i, j])
-                    {
-                        min = iARRAY[i, j];
-                        imin = i, imin = j;
-                    }
-                }
+                Console.WriteLine("Максимальный элемент встречается раньше минимального");
             }
-            Console.WriteLine("Минимальное значение {0}, Индекс: {1}{2}. Максимальное значение {3}, Индекс: {4}{5}", min, imax, jmax, max);
             Console.ReadLine();
         }
     }
