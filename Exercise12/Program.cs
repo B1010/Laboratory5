@@ -4,7 +4,7 @@ namespace Exercise12
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             Random randomforarray = new Random();
             int newi, newj;

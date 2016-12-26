@@ -6,13 +6,13 @@ namespace Exercise3
     {
         static void Main(string[] args)
         {
-            double[] iarray = new double[10];
+            int[] iarray = new int[10];
             int temp = 0, max = 0;
 
             Console.WriteLine("Введите элементы массива: ");
             while (temp < 10)
             {
-                iarray[temp] = double.Parse(Console.ReadLine());
+                iarray[temp] = int.Parse(Console.ReadLine());
                 temp++;
             }
 

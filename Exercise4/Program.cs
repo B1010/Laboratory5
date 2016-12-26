@@ -6,18 +6,14 @@ namespace Exercise4
     {
         static void Main(string[] args)
         {
-            int one_array, two_array;
+            int one_array, two_array, index = 1, count = 0;
             Console.Write("Введите размер 1 массива: ");
             one_array = int.Parse(Console.ReadLine());
             Console.Write("Введите размер 2 массива: ");
             two_array = int.Parse(Console.ReadLine());
 
-            int[] iarray = new int[one_array];
-            int[] jarray = new int[two_array];
-            int[] larray = new int[one_array + two_array];
-            int[] tarray = new int[one_array + two_array];
-            int index = 1;
-            int count = 0;
+            int[] iarray = new int[one_array], jarray = new int[two_array];
+            int[] larray = new int[one_array + two_array], tarray = new int[one_array + two_array];
             Random randomforarray = new Random();
 
             Console.Write("\nПервый массив: ");
@@ -45,9 +41,7 @@ namespace Exercise4
                         min = j;
                     }
                 }
-                int temp = larray[min];
-                larray[min] = larray[i];
-                larray[i] = temp;
+                int temp = larray[min] = larray[i];
             }
             tarray[0] = larray[0];
             for (int i = 1; i < larray.Length; i++)

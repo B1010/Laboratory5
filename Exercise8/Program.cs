@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Exercise8
 {
@@ -34,32 +30,29 @@ namespace Exercise8
                 sum = 0;
             }
             int maxstr = arrayline[0];
-            k = 0;
-            for (k = 0; k < 10; k++)
+            for (int g = 0; g < 10; g++)
             {
-                if (maxstr < arrayline[k])
+                if (maxstr < arrayline[g])
                 {
-                    maxstr = arrayline[k];
+                    maxstr = arrayline[g];
                 }
             }
             sum = 0;
-            k = 0;
-            for (int i = 0; i < 10; i++, k++)
+            for (int i = 0, f = 0; i < 10; i++, f++)
             {
                 for (int j = 0; j < 10; j++)
                 {
                     sum += iarray[j, i];
                 }
-                arraycolu[k] = sum;
+                arraycolu[f] = sum;
                 sum = 0;
             }
             int maxstb = arraycolu[0];
-            k = 0;
-            for (k = 0; k < 10; k++)
+            for (int b = 0; b < 10; b++)
             {
-                if (maxstb < arraycolu[k])
+                if (maxstb < arraycolu[b])
                 {
-                    maxstb = arraycolu[k];
+                    maxstb = arraycolu[b];
                 }
 
             }
